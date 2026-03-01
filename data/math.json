@@ -284,7 +284,7 @@
     "points": "1",
     "topic": "Интеграл. Тригонометрические функции.",
     "type": "single",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   },
   {
@@ -341,7 +341,7 @@
     "parsed_options": [
       {"letter": "A", "text": "$27a^6+8b^3$"},
       {"letter": "B", "text": "$27a^6-8b^3$"},
-      {"letter": "C", "text": "$27a^6"},
+      {"letter": "C", "text": "$27a^6$"},
       {"letter": "D", "text": "$8b^3$"}
     ],
     "correct_letters": ["C"],
@@ -385,7 +385,7 @@
   },
   {
     "num": 25,
-    "question": "Напишите уравнение касательной к графику функции $f(x) = x^3 - x$ в точке с абсциссой $x_0 = 2$.",
+    "question": "Напишите уравнение касательной к графику функции $f(x) = x^{-3} \\ln(5x-4)$ в точке с абсциссой.",
     "parsed_options": [
       {"letter": "A", "text": "$y = 5x - 15$"},
       {"letter": "B", "text": "$y = 5x + 5$"},
@@ -419,76 +419,72 @@
     "num": 27,
     "question": "Стороны оснований правильной четырёхугольной усечённой пирамиды равны 10 см и 4 см, а высота равна 6 см. Найдите апофему пирамиды.",
     "parsed_options": [
-      {"letter": "A", "text": "Вариант A"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "Вариант D"}
+      {"letter": "A", "text": "$\\sqrt{40}$ см"},
+      {"letter": "B", "text": "$\\sqrt{61}$ см"},
+      {"letter": "C", "text": "$\\sqrt{45}$ см"},
+      {"letter": "D", "text": "$\\sqrt{52}$ см"}
     ],
     "correct_letters": ["C"],
     "points": "1",
     "topic": "Стереометрия. Правильная усечённая пирамида.",
     "type": "single",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   },
   {
     "num": 28,
-    "question": "Выразите высоту $h$ цилиндра через радиус $x$, если объём цилиндра равен $100\\pi$.\n<img src='question28_math_image.png'>",
+    "question": "Выразите высоту $h$ цилиндра через радиус $x$",
     "parsed_options": [
-      {"letter": "A", "text": "Вариант A"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "Вариант D"}
+      {"letter": "A", "text": "$h=\\dfrac{36}{\\pi x}$"},
+      {"letter": "B", "text": "$h=\\dfrac{36}{\\pi x^2}$"},
+      {"letter": "C", "text": "$h=\\dfrac{36}{2\\pi x^2}$"},
+      {"letter": "D", "text": "$h=\\pi x^2$"}
     ],
     "correct_letters": ["B"],
     "points": "1",
     "topic": "Стереометрия. Цилиндр.",
     "type": "single",
-    "has_formula_images": true,
-    "context": "Задания 28–30 связаны с одним условием: дан прямой цилиндр объёмом $100\\pi$."
+    "has_formula_images": false,
+    "context": "Фирма производит картонные коробки цилиндрической формы различных размеров. \nОбъемом $V=36 см^3$.\nРадиус основания обозначим x, где $x \\in [2;\\;6]$.\nВысота цилиндра равна h."
   },
   {
     "num": 29,
-    "question": "Найдите площадь основания цилиндра при наименьшем допустимом целом значении радиуса.\n<img src='question29_math_image.png'>",
+    "question": "Найдите площадь основания при наименьшем допустимом целом значении радиуса.",
     "parsed_options": [
-      {"letter": "A", "text": "Вариант A"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "Вариант D"}
+      {"letter": "A", "text": "$3\\pi$"},
+      {"letter": "B", "text": "$\\pi$"},
+      {"letter": "C", "text": "$6\\pi$"},
+      {"letter": "D", "text": "$4\\pi$"}
     ],
     "correct_letters": ["D"],
     "points": "1",
     "topic": "Стереометрия. Цилиндр.",
     "type": "single",
-    "has_formula_images": true,
-    "context": "Задания 28–30 связаны с одним условием: дан прямой цилиндр объёмом $100\\pi$."
+    "has_formula_images": false,
+    "context": "Фирма производит картонные коробки цилиндрической формы различных размеров. \nОбъемом $V=36 см^3$.\nРадиус основания обозначим x, где $x \\in [2;\\;6]$.\nВысота цилиндра равна h."
   },
   {
     "num": 30,
-    "question": "Найдите функцию площади боковой поверхности цилиндра.\n<img src='question30_math_image.png'>",
+    "question": "Найдите функцию площади боковой поверхности цилиндра.",
     "parsed_options": [
-      {"letter": "A", "text": "Вариант A"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "Вариант D"}
+      {"letter": "A", "text": "$S_{бок}(x)=2\\pi x$"},
+      {"letter": "B", "text": "$S_{бок}(x)=\\dfrac{72}{x}$"},
+      {"letter": "C", "text": "$S_{бок}(x)=\\dfrac{72}{\\pi x}$"},
+      {"letter": "D", "text": "$S_{бок}(x)=\\dfrac{72}{x^2}$"}
     ],
     "correct_letters": ["B"],
     "points": "1",
     "topic": "Стереометрия. Цилиндр.",
     "type": "single",
-    "has_formula_images": true,
-    "context": "Задания 28–30 связаны с одним условием: дан прямой цилиндр объёмом $100\\pi$."
+    "has_formula_images": false,
+    "context": "Фирма производит картонные коробки цилиндрической формы различных размеров. \nОбъемом $V=36 см^3$.\nРадиус основания обозначим x, где $x \\in [2;\\;6]$.\nВысота цилиндра равна h."
   },
   {
     "num": 31,
-    "question": "В окружности с центром $O$ точки $A$, $B$ и $C$ лежат на окружности. Отрезок $AC$ проходит через центр окружности. Проведены отрезки $AB$ и $BC$. Известно, что $\\angle BAC = 35°$.\n\nA) Найдите угол $ABC$.\nB) Найдите угол $BOC$.\n<img src='question31_math_image.png'>",
+    "question": "В окружности с центром $O$ точки $A$, $B$ и $C$ лежат на окружности. Отрезок $AC$ проходит через центр окружности. \nПроведены отрезки $AB$ и $BC$. \nИзвестно, что $\\angle AOB = 80°$.\n\n1) Найдите угол $ACB$.\n2) Найдите угол $ABC$.\n\nA) $90°$ \nB) $50°$\nC) $80°$\nD) $40°$\n\n<img src='question31_math_image.png'>",
     "parsed_options": [
-      {"letter": "1", "text": "$90°$"},
-      {"letter": "2", "text": "$55°$"},
-      {"letter": "3", "text": "$70°$"},
-      {"letter": "4", "text": "$110°$"}
     ],
-    "correct_letters": ["A) 4\nB) 1"],
+    "correct_letters": ["1 - D\n2 - A"],
     "points": "2",
     "topic": "Планиметрия. Окружность. Вписанные углы.",
     "type": "matching",
@@ -497,14 +493,10 @@
   },
   {
     "num": 32,
-    "question": "Дана функция $f(x) = x^2 - 4x + 1$. Установите соответствие между данными величинами и их значениями.\n\nA) Координата точки пересечения графика с осью $Oy$\nB) Координаты вершины параболы",
+    "question": "Дана функция $f(x) = x^2 - 4x + 1$. \nУстановите соответствие между данными величинами и их значениями.\n\n1) Координата точки пересечения графика с осью $Oy$\n2) Координаты вершины параболы \n\nA) $(2;\\; -3)$ \nB) $(0;\\; 1)$\nC) $(4;\\; 1)$\nD) $(2;\\; 1)$\n",
     "parsed_options": [
-      {"letter": "1", "text": "$(2;\\; -3)$"},
-      {"letter": "2", "text": "$(0;\\; 1)$"},
-      {"letter": "3", "text": "$(4;\\; 1)$"},
-      {"letter": "4", "text": "$(2;\\; 1)$"}
     ],
-    "correct_letters": ["A) 2\nB) 1"],
+    "correct_letters": ["1 - B\n2 - A"],
     "points": "2",
     "topic": "Функции. Квадратичная функция.",
     "type": "matching",
@@ -513,14 +505,10 @@
   },
   {
     "num": 33,
-    "question": "Упростите выражение $(x - 3)(x + 2) - x(x - 2)$ и затем установите соответствие.\n\nA) Свободный член равен\nB) Коэффициент при $x$ равен",
+    "question": "Упростите выражение $4(x-3)^2-2(x-5)^2+7$ и затем установите соответствие.\n\n1) Свободный член равен\n2) Коэффициент при $x$ равен \n\nA) $-7$ \nB) $-4$\nC) $2$\nD) $7$\n",
     "parsed_options": [
-      {"letter": "1", "text": "$-7$"},
-      {"letter": "2", "text": "$-4$"},
-      {"letter": "3", "text": "$2$"},
-      {"letter": "4", "text": "$7$"}
     ],
-    "correct_letters": ["A) 1\nB) 2"],
+    "correct_letters": ["1 - A\n2 - B"],
     "points": "2",
     "topic": "Многочлен. Приведение подобных слагаемых.",
     "type": "matching",
@@ -529,30 +517,22 @@
   },
   {
     "num": 34,
-    "question": "Дано уравнение $|2x - 3| = x$. Установите соответствие.\n\nA) Наименьший корень уравнения равен\nB) Наибольший корень уравнения равен",
+    "question": "Дано уравнение $|3x - 4| = 5$. Установите соответствие.\n\n1) Наименьший корень уравнения равен\n2) Наибольший корень уравнения равен\n\nA) $\\dfrac{7}{3}$ \nB) $3$\nC) $\\dfrac{1}{3}$\nD) $-\\dfrac{1}{3}$\n",
     "parsed_options": [
-      {"letter": "1", "text": "Вариант 1"},
-      {"letter": "2", "text": "$3$"},
-      {"letter": "3", "text": "Вариант 3"},
-      {"letter": "4", "text": "Вариант 4"}
     ],
-    "correct_letters": ["A) 4\nB) 2"],
+    "correct_letters": ["1 - D\n2 - B"],
     "points": "2",
     "topic": "Модуль. Уравнения с модулем.",
     "type": "matching",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   },
   {
     "num": 35,
-    "question": "Дана арифметическая прогрессия: $2,\\; 7,\\; 12,\\; \\ldots$ Установите соответствие.\n\nA) Шестой член прогрессии равен\nB) Номер члена прогрессии, равного 57",
+    "question": "Дана арифметическая прогрессия: $ 7; 12; \\ldots$ \nУстановите соответствие.\n\n1) Шестой член прогрессии равен\n2) Номер члена прогрессии, равного 57\n\nA) $32$\nB) $57$\nC) $11$\nD) $6$\n",
     "parsed_options": [
-      {"letter": "1", "text": "$32$"},
-      {"letter": "2", "text": "$57$"},
-      {"letter": "3", "text": "$11$"},
-      {"letter": "4", "text": "$6$"}
     ],
-    "correct_letters": ["A) 1\nB) 3"],
+    "correct_letters": ["1 - A\n2 - C"],
     "points": "2",
     "topic": "Прогрессии. Арифметическая прогрессия.",
     "type": "matching",
@@ -561,43 +541,43 @@
   },
   {
     "num": 36,
-    "question": "Укажите промежутки, которым принадлежит значение выражения:\n<img src='question36_math_image.png'>",
+    "question": "Укажите промежутки, которым принадлежит значение выражения:\n$3,2+4^2\\cdot0,5-10^2\\cdot0,02$",
     "parsed_options": [
-      {"letter": "A", "text": "Вариант A"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "Вариант D"},
-      {"letter": "E", "text": "Вариант E"},
-      {"letter": "F", "text": "Вариант F"}
+      {"letter": "A", "text": "$(-2;7)$"},
+      {"letter": "B", "text": "$(8)$"},
+      {"letter": "C", "text": "$(9)$"},
+      {"letter": "D", "text": "$(12)$"},
+      {"letter": "E", "text": "$(15)$"},
+      {"letter": "F", "text": "$(20)$"}
     ],
     "correct_letters": ["D", "E"],
     "points": "2",
     "topic": "Десятичные числа. Степень.",
     "type": "multi",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   },
   {
     "num": 37,
-    "question": "Из указанных ниже ответов укажите те, которые равны значению выражения $\\cos^2 10° - \\sin^2 10°$.",
+    "question": "Из указанных ниже ответов укажите те, которые равны значению выражения $(1+tan^2\\alpha)cos^2\\alpha+(sin^2\\alpha+cos^2\\alpha)$.",
     "parsed_options": [
       {"letter": "A", "text": "$1$"},
-      {"letter": "B", "text": "$20$"},
-      {"letter": "C", "text": "$\\cos 20°$"},
-      {"letter": "D", "text": "Вариант D"},
-      {"letter": "E", "text": "Вариант E"},
+      {"letter": "B", "text": "$2^0$"},
+      {"letter": "C", "text": "$(\\dfrac{1}{2})^{-1}$"},
+      {"letter": "D", "text": "$\\sqrt{1}$"},
+      {"letter": "E", "text": "$\\sqrt{4}$"},
       {"letter": "F", "text": "$2$"}
     ],
     "correct_letters": ["C", "E", "F"],
     "points": "2",
     "topic": "Тригонометрия. Тождественные преобразования.",
     "type": "multi",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   },
   {
     "num": 38,
-    "question": "Числа $x,\\; 3x - 2,\\; 5x + 4$ образуют геометрическую прогрессию. Определите все возможные значения $x$.",
+    "question": "Числа $x,\\; 6,\\; 16+x$ образуют геометрическую прогрессию. Определите все возможные значения $x$.",
     "parsed_options": [
       {"letter": "A", "text": "$-8$"},
       {"letter": "B", "text": "$4$"},
@@ -615,7 +595,7 @@
   },
   {
     "num": 39,
-    "question": "Пара чисел $(x_0,\\; y_0)$ является решением системы\n<img src='question39_math_image.png'>\nВычислите значение выражения $3x_0 - y_0$ и $x_0 + y_0$.",
+    "question": "Пара чисел $(x_n,\\; y_n)$ является решением системы\n$\\begin{cases}\\sqrt{x} + \\sqrt{y} = 8 \\\\ x+y=34  \\end{cases}$ \nВычислите значение выражения $2x_n - 3y_n$.",
     "parsed_options": [
       {"letter": "A", "text": "$39$"},
       {"letter": "B", "text": "$-57$"},
@@ -633,12 +613,12 @@
   },
   {
     "num": 40,
-    "question": "Дан прямой цилиндр с радиусом основания $r = 3$ и высотой $h = 4$. Найдите:\n— длину диагонали осевого сечения цилиндра;\n— отношение площади боковой поверхности к площади основания.\n<img src='question40_math_image.png'>",
+    "question": "Дан прямой цилиндр. \nНайдите длину диагонали осевого сечения цилиндра.\nОтношение площади боковой поверхности к площади основания.\n<img src='question40_math_image.png'>",
     "parsed_options": [
-      {"letter": "A", "text": "$4$"},
-      {"letter": "B", "text": "Вариант B"},
-      {"letter": "C", "text": "Вариант C"},
-      {"letter": "D", "text": "$24$"},
+      {"letter": "A", "text": "$4\\pi$"},
+      {"letter": "B", "text": "$4\\sqrt{10}$"},
+      {"letter": "C", "text": "$2\\sqrt{13}$"},
+      {"letter": "D", "text": "$24\\pi$"},
       {"letter": "E", "text": "$6$"},
       {"letter": "F", "text": "$7$"}
     ],
@@ -646,7 +626,7 @@
     "points": "2",
     "topic": "Стереометрия. Цилиндр.",
     "type": "multi",
-    "has_formula_images": true,
+    "has_formula_images": false,
     "context": ""
   }
 ]
