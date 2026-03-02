@@ -1576,53 +1576,197 @@ async function sendResultsToTelegram() {
   try {
     const name = window.userInfo?.name || 'Ученик';
     const phone = window.userInfo?.phone || 'Не указан';
+    const variantName = VARIANTS[selectedVariant]?.label || '';
 
-    const resultsElement = document.getElementById('resultsContent');
-    
-    // 1. Создаем скриншот с ПОВЫШЕННЫМ качеством
-    const canvas = await html2canvas(resultsElement, {
-      backgroundColor: '#0f1117',
-      scale: 3, // Увеличили с 2 до 3 для идеальной четкости
-      useCORS: true,
-      logging: false,
-      // Убираем явное указание ширины/высоты окна, чтобы html2canvas сам вычислил размер контента
-      scrollX: 0,
-      scrollY: -window.scrollY,
+    // Собираем строки по предметам
+    let subjectsHtml = '';
+    testSubjects.forEach(subj => {
+      const r = globalSubjectResults[subj];
+      if (!r) return;
+      const pct = r.maxTotal > 0 ? Math.round(r.total / r.maxTotal * 100) : 0;
+      const color = pct >= 80 ? '#22d3a5' : pct >= 60 ? '#4f8ef7' : pct >= 40 ? '#f5c842' : '#f04f5a';
+
+      let topicsHtml = '';
+      Object.entries(r.topics).forEach(([topic, t]) => {
+        const tPct = t.max > 0 ? Math.round(t.earned / t.max * 100) : 0;
+        const tColor = tPct >= 80 ? '#22d3a5' : tPct >= 60 ? '#4f8ef7' : tPct >= 40 ? '#f5c842' : '#f04f5a';
+        topicsHtml += `
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #2a3045;">
+            <span style="flex:1;color:#8b91a8;font-size:13px;">${topic}</span>
+            <div style="width:80px;height:5px;background:#1e2333;border-radius:3px;overflow:hidden;">
+              <div style="width:${tPct}%;height:100%;background:${tColor};border-radius:3px;"></div>
+            </div>
+            <span style="font-weight:600;color:${tColor};min-width:50px;text-align:right;font-size:13px;">${t.earned}/${t.max}</span>
+          </div>`;
+      });
+
+      subjectsHtml += `
+        <div style="background:#181c26;border:1px solid #2a3045;border-radius:16px;padding:24px;margin-bottom:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <div style="font-family:'Unbounded',sans-serif;font-size:15px;font-weight:700;color:${r.color || '#4f8ef7'}">${r.name}</div>
+            <div>
+              <span style="font-family:'Unbounded',sans-serif;font-size:20px;font-weight:800;color:${color}">${r.total}</span>
+              <span style="color:#8b91a8;font-size:12px;">/${r.maxTotal} баллов</span>
+            </div>
+          </div>
+          <div style="height:8px;background:#1e2333;border-radius:4px;overflow:hidden;margin-bottom:20px;">
+            <div style="width:${pct}%;height:100%;background:${color};border-radius:4px;"></div>
+          </div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:#8b91a8;text-transform:uppercase;margin-bottom:12px;">Разбивка по темам</div>
+          ${topicsHtml}
+        </div>`;
     });
 
-    // 2. Превращаем в Blob
-    const imageBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    // Итоговый процент
+    const totalPct = globalTotalMax > 0 ? Math.round(globalTotalEarned / globalTotalMax * 100) : 0;
+    const totalColor = totalPct >= 80 ? '#22d3a5' : totalPct >= 60 ? '#4f8ef7' : totalPct >= 40 ? '#f5c842' : '#f04f5a';
 
-    const botToken = '8791571555:AAFi3cOD9J_WT-573lzDNyrGxQDMQwFBQjE'; 
-    const chatId = -1003606584661; // ID вашей TG-группы (убедитесь, что бот добавлен в группу и имеет права на отправку сообщений)
+    // Генерируем HTML
+    const htmlContent = `<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результаты — ${name}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0f1117;
+      color: #e8eaf0;
+      font-family: 'Golos Text', sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .wrap { max-width: 800px; margin: 0 auto; }
+    .logo {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #4f8ef7, #7c5cfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 32px;
+    }
+    .title {
+      font-family: 'Unbounded', sans-serif;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #22d3a5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .subtitle { color: #8b91a8; margin-bottom: 32px; font-size: 15px; }
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .info-chip {
+      background: #181c26;
+      border: 1px solid #2a3045;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+    .info-chip span { color: #8b91a8; }
+    .info-chip strong { color: #e8eaf0; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .summary-card {
+      background: #181c26;
+      border: 1px solid #2a3045;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+    .summary-num {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .summary-label { font-size: 12px; color: #8b91a8; }
+    .footer {
+      text-align: center;
+      color: #2a3045;
+      font-size: 12px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">WEGLOBAL · ЕНТ</div>
+    <div class="title">Результаты теста 🎯</div>
+    <div class="subtitle">Диагностический тест · ${variantName}</div>
+
+    <div class="info-row">
+      <div class="info-chip"><span>Ученик: </span><strong>${name}</strong></div>
+      <div class="info-chip"><span>Телефон: </span><strong>${phone}</strong></div>
+      <div class="info-chip"><span>Время: </span><strong>${globalTimeStr}</strong></div>
+      <div class="info-chip"><span>Ответов: </span><strong>${globalAnsweredCount} из ${allQuestions.length}</strong></div>
+    </div>
+
+    <div class="summary">
+      <div class="summary-card">
+        <div class="summary-num" style="color:#4f8ef7">${globalTotalEarned}/${globalTotalMax}</div>
+        <div class="summary-label">Итого баллов</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-num" style="color:${totalColor}">${totalPct}%</div>
+        <div class="summary-label">Процент</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-num" style="color:#f5c842">${globalAnsweredCount}</div>
+        <div class="summary-label">Ответов дано</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-num">${globalTimeStr}</div>
+        <div class="summary-label">Время</div>
+      </div>
+    </div>
+
+    ${subjectsHtml}
+
+    <div class="footer">WEGLOBAL · Диагностический тест ЕНТ · ${new Date().toLocaleDateString('ru-RU')}</div>
+  </div>
+</body>
+</html>`;
+
+    // Отправляем как HTML файл
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+
+    const botToken = '8791571555:AAFi3cOD9J_WT-573lzDNyrGxQDMQwFBQjE';
+    const chatId = -1003606584661;
 
     const formData = new FormData();
     formData.append('chat_id', chatId);
-    
-    // МЕНЯЕМ поле на 'document'
-    formData.append('document', imageBlob, `Результат_${name}.png`);
-    
-    // Текст подписи
-    const caption = `📊 *Результаты ЕНТ*\n👤 Ученик: ${name}\n📞 Телефон: ${phone}\n⏳ Время: ${globalTimeStr || '00:00'}\n🏆 Баллы: ${globalTotalEarned}/${globalTotalMax}`;
+    formData.append('document', blob, `Результат_${name}_${new Date().toLocaleDateString('ru-RU')}.html`);
+
+    const caption = `📊 *Результаты ЕНТ*\n👤 ${name}\n📞 ${phone}\n⏳ ${globalTimeStr}\n🏆 ${globalTotalEarned}/${globalTotalMax} (${totalPct}%)`;
     formData.append('caption', caption);
     formData.append('parse_mode', 'Markdown');
 
-    // МЕНЯЕМ метод на sendDocument
-    const url = `https://api.telegram.org/bot${botToken}/sendDocument`;
-
-    const response = await fetch(url, {
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
       method: 'POST',
       body: formData
     });
 
     if (response.ok) {
-      console.log('✅ Результат отправлен как документ (без потери качества)');
+      console.log('✅ HTML результат отправлен в Telegram');
     } else {
-      const errorText = await response.text();
-      console.error('❌ Ошибка TG:', response.status, errorText);
+      const err = await response.text();
+      console.error('❌ Ошибка TG:', response.status, err);
     }
   } catch (e) {
-    console.error('❌ Ошибка при создании документа:', e);
+    console.error('❌ Ошибка при отправке:', e);
   }
 }
 // ==================== INIT ====================
