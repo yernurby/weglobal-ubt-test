@@ -1912,14 +1912,15 @@ async function sendAnswersToTelegram() {
     const imgRegex = /src="([^"]+\.(png|jpg|jpeg|gif|svg))"/g;
     const srcList = [...new Set([...questionsHtml.matchAll(imgRegex)].map(m => m[1]))];
     
+    console.log('🖼 Найдено картинок:', srcList.length, srcList);
+    
     for (const src of srcList) {
       const base64 = await imageToBase64(src);
       if (base64) {
-        // Заменяем все вхождения этого src
         questionsHtml = questionsHtml.split(`src="${src}"`).join(`src="${base64}"`);
-        console.log('✅ Картинка встроена:', src);
+        console.log('✅ Встроена:', src);
       } else {
-        console.warn('⚠️ Картинка не найдена:', src);
+        console.warn('⚠️ Не загрузилась:', src);
       }
     }
 
