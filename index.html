@@ -1015,6 +1015,8 @@ function renderQuestion(idx) {
     html += renderFormulaOptions(q, idx);
   } else if (q.type === 'matching') {
     html += renderMatchingOptions(q, idx);
+  } else if (q.type === 'multi_eng') {
+    html += renderMultiEngOptions(q, idx); 
   } else if (q.type === 'multi') {
     html += renderMultiOptions(q, idx);
   } else {
@@ -1077,11 +1079,35 @@ function renderFormulaOptions(q, globalIdx) {
 
 function renderMultiOptions(q, globalIdx) {
   const current = answers[globalIdx] || [];
-  const maxSelect = q.correct_letters.length; // 2 или 3 — динамически
+  const isMax = current.length >= 3; // всегда 3 для обычного multi
+  
+  let html = `<div style="font-size:13px;color:var(--text2);margin-bottom:12px">
+                Выберите правильные варианты
+              </div>`;
+  
+  html += `<div class="options-list ${isMax ? 'max-reached' : ''}">`;
+  
+  q.parsed_options.forEach(opt => {
+    const selected = current.includes(opt.letter);
+    html += `
+      <div class="option-item ${selected ? 'multi-selected' : ''}" 
+           onclick="selectMulti(${globalIdx}, '${opt.letter}')">
+        <div class="opt-letter">${opt.letter}</div>
+        <div class="opt-text">${opt.text || '(формула)'}</div>
+      </div>`;
+  });
+  
+  html += `</div>`;
+  return html;
+}
+
+function renderMultiEngOptions(q, globalIdx) {
+  const current = answers[globalIdx] || [];
+  const maxSelect = 2; // английский — ровно 2
   const isMax = current.length >= maxSelect;
   
   let html = `<div style="font-size:13px;color:var(--text2);margin-bottom:12px">
-                Выберите правильные варианты (максимум ${maxSelect})
+                Выберите <strong style="color:var(--accent)">2</strong> правильных варианта
               </div>`;
   
   html += `<div class="options-list ${isMax ? 'max-reached' : ''}">`;
@@ -1146,7 +1172,7 @@ function selectSingle(globalIdx, letter) {
 
 function selectMulti(globalIdx, letter) {
   const q = allQuestions[globalIdx].question;
-  const maxSelect = q.correct_letters.length; // динамический лимит
+  const maxSelect = q.type === 'multi_eng' ? 2 : 3; // англ = 2, остальные = 3
   let current = answers[globalIdx] || [];
   
   if (current.includes(letter)) {
@@ -1378,7 +1404,20 @@ function scoreAnswer(q, userAnswer, maxPoints) {
       return 0;
     }
   }
-  
+  if (q.type === 'multi_eng') {
+    if (!userAnswer || !Array.isArray(userAnswer) || userAnswer.length === 0) return 0;
+    const correctLetters = q.correct_letters || [];
+    let correctCount = 0;
+    let wrongCount = 0;
+    userAnswer.forEach(letter => {
+      if (correctLetters.includes(letter)) correctCount++;
+      else wrongCount++;
+    });
+    if (correctCount === 2 && wrongCount === 0) return 2;
+    if (correctCount === 1 && wrongCount === 0) return 1;
+    if (correctCount === 2 && wrongCount === 1) return 1;
+    return 0;
+  }
   if (q.type === 'matching') {
     if (!userAnswer || typeof userAnswer !== 'object') return 0;
 
