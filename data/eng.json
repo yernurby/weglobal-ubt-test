@@ -1,18 +1,671 @@
 [
   {
     "num": 1,
-    "question": "Выберите правильный вариант перевода: 'Hello!'",
+    "question": "She ____ already finished her project.",
     "parsed_options": [
-      {"letter": "A", "text": "Привет!"},
-      {"letter": "B", "text": "Пока!"},
-      {"letter": "C", "text": "Спасибо!"},
-      {"letter": "D", "text": "Да!"}
+      {"letter": "A", "text": "have"},
+      {"letter": "B", "text": "has"},
+      {"letter": "C", "text": "had"},
+      {"letter": "D", "text": "is"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Present Perfect",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 2,
+    "question": "If I ____ more time, I would learn Chinese.",
+    "parsed_options": [
+      {"letter": "A", "text": "have"},
+      {"letter": "B", "text": "had"},
+      {"letter": "C", "text": "will have"},
+      {"letter": "D", "text": "having"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Conditionals",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 3,
+    "question": "They ____ TV when I came home.",
+    "parsed_options": [
+      {"letter": "A", "text": "watch"},
+      {"letter": "B", "text": "were watching"},
+      {"letter": "C", "text": "watched"},
+      {"letter": "D", "text": "have watched"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Past Continuous",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 4,
+    "question": "This is the ____ restaurant in the city.",
+    "parsed_options": [
+      {"letter": "A", "text": "better"},
+      {"letter": "B", "text": "best"},
+      {"letter": "C", "text": "more good"},
+      {"letter": "D", "text": "very good"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Superlative adjectives",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 5,
+    "question": "There isn't ____ information available.",
+    "parsed_options": [
+      {"letter": "A", "text": "many"},
+      {"letter": "B", "text": "much"},
+      {"letter": "C", "text": "few"},
+      {"letter": "D", "text": "several"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Quantifiers",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 6,
+    "question": "He speaks so ____ that everyone understands him.",
+    "parsed_options": [
+      {"letter": "A", "text": "clear"},
+      {"letter": "B", "text": "clearly"},
+      {"letter": "C", "text": "clearing"},
+      {"letter": "D", "text": "clearness"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Adverbs",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 7,
+    "question": "She asked me where I ____ the day before.",
+    "parsed_options": [
+      {"letter": "A", "text": "am"},
+      {"letter": "B", "text": "was"},
+      {"letter": "C", "text": "have been"},
+      {"letter": "D", "text": "were"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Reported speech",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 8,
+    "question": "The new hospital ____ last year.",
+    "parsed_options": [
+      {"letter": "A", "text": "built"},
+      {"letter": "B", "text": "was built"},
+      {"letter": "C", "text": "build"},
+      {"letter": "D", "text": "is building"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Passive voice",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 9,
+    "question": "I'm afraid ____ spiders.",
+    "parsed_options": [
+      {"letter": "A", "text": "from"},
+      {"letter": "B", "text": "with"},
+      {"letter": "C", "text": "of"},
+      {"letter": "D", "text": "at"}
+    ],
+    "correct_letters": ["C"],
+    "points": "1",
+    "topic": "Prepositions",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 10,
+    "question": "We won't leave until he ____.",
+    "parsed_options": [
+      {"letter": "A", "text": "will arrive"},
+      {"letter": "B", "text": "arrives"},
+      {"letter": "C", "text": "arrived"},
+      {"letter": "D", "text": "arriving"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Time clauses",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 11,
+    "question": "You ____ finish this task today. It's urgent.",
+    "parsed_options": [
+      {"letter": "A", "text": "must"},
+      {"letter": "B", "text": "might"},
+      {"letter": "C", "text": "could"},
+      {"letter": "D", "text": "may"}
     ],
     "correct_letters": ["A"],
-    "correct": "A) Привет!",
     "points": "1",
-    "topic": "Приветствия",
+    "topic": "Modal verbs",
     "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 12,
+    "question": "She has worked here ____ 2018.",
+    "parsed_options": [
+      {"letter": "A", "text": "for"},
+      {"letter": "B", "text": "since"},
+      {"letter": "C", "text": "at"},
+      {"letter": "D", "text": "during"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Prepositions of time",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 13,
+    "question": "I don't have ____ money to buy it.",
+    "parsed_options": [
+      {"letter": "A", "text": "enough"},
+      {"letter": "B", "text": "very"},
+      {"letter": "C", "text": "too"},
+      {"letter": "D", "text": "much more"}
+    ],
+    "correct_letters": ["A"],
+    "points": "1",
+    "topic": "Quantifiers",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 14,
+    "question": "He is stronger ____ his brother.",
+    "parsed_options": [
+      {"letter": "A", "text": "than"},
+      {"letter": "B", "text": "then"},
+      {"letter": "C", "text": "that"},
+      {"letter": "D", "text": "as"}
+    ],
+    "correct_letters": ["A"],
+    "points": "1",
+    "topic": "Comparative adjectives",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 15,
+    "question": "I've never ____ such a beautiful place.",
+    "parsed_options": [
+      {"letter": "A", "text": "saw"},
+      {"letter": "B", "text": "seen"},
+      {"letter": "C", "text": "see"},
+      {"letter": "D", "text": "seeing"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Present Perfect",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 16,
+    "question": "She can drive, ____?",
+    "parsed_options": [
+      {"letter": "A", "text": "can she"},
+      {"letter": "B", "text": "can't she"},
+      {"letter": "C", "text": "doesn't she"},
+      {"letter": "D", "text": "isn't she"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Tag questions",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 17,
+    "question": "I'm used to ____ early.",
+    "parsed_options": [
+      {"letter": "A", "text": "wake up"},
+      {"letter": "B", "text": "waking up"},
+      {"letter": "C", "text": "woke up"},
+      {"letter": "D", "text": "wakes up"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Used to / be used to",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 18,
+    "question": "He insisted ____ paying for dinner.",
+    "parsed_options": [
+      {"letter": "A", "text": "in"},
+      {"letter": "B", "text": "on"},
+      {"letter": "C", "text": "at"},
+      {"letter": "D", "text": "for"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Prepositions",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 19,
+    "question": "By next year, I ____ my degree.",
+    "parsed_options": [
+      {"letter": "A", "text": "finish"},
+      {"letter": "B", "text": "will finish"},
+      {"letter": "C", "text": "will have finished"},
+      {"letter": "D", "text": "finished"}
+    ],
+    "correct_letters": ["C"],
+    "points": "1",
+    "topic": "Future Perfect",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 20,
+    "question": "This problem is too difficult for me to ____.",
+    "parsed_options": [
+      {"letter": "A", "text": "solve"},
+      {"letter": "B", "text": "solving"},
+      {"letter": "C", "text": "solved"},
+      {"letter": "D", "text": "solution"}
+    ],
+    "correct_letters": ["A"],
+    "points": "1",
+    "topic": "Infinitive",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 21,
+    "question": "I prefer walking ____ driving.",
+    "parsed_options": [
+      {"letter": "A", "text": "than"},
+      {"letter": "B", "text": "to"},
+      {"letter": "C", "text": "from"},
+      {"letter": "D", "text": "over"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Prepositions",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 22,
+    "question": "She said she ____ tired.",
+    "parsed_options": [
+      {"letter": "A", "text": "is"},
+      {"letter": "B", "text": "was"},
+      {"letter": "C", "text": "were"},
+      {"letter": "D", "text": "be"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Reported speech",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 23,
+    "question": "There are ____ students waiting outside.",
+    "parsed_options": [
+      {"letter": "A", "text": "much"},
+      {"letter": "B", "text": "little"},
+      {"letter": "C", "text": "a few"},
+      {"letter": "D", "text": "less"}
+    ],
+    "correct_letters": ["C"],
+    "points": "1",
+    "topic": "Quantifiers",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 24,
+    "question": "I wish I ____ play the piano.",
+    "parsed_options": [
+      {"letter": "A", "text": "can"},
+      {"letter": "B", "text": "could"},
+      {"letter": "C", "text": "will"},
+      {"letter": "D", "text": "must"}
+    ],
+    "correct_letters": ["B"],
+    "points": "1",
+    "topic": "Wish clauses",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 25,
+    "question": "That's the house ____ roof was damaged.",
+    "parsed_options": [
+      {"letter": "A", "text": "which"},
+      {"letter": "B", "text": "who"},
+      {"letter": "C", "text": "whose"},
+      {"letter": "D", "text": "where"}
+    ],
+    "correct_letters": ["C"],
+    "points": "1",
+    "topic": "Relative clauses",
+    "type": "single",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 26,
+    "question": "Which sentences are correct?",
+    "parsed_options": [
+      {"letter": "A", "text": "She has just left."},
+      {"letter": "B", "text": "She just has left."},
+      {"letter": "C", "text": "She left yesterday."},
+      {"letter": "D", "text": "She has left yesterday."},
+      {"letter": "E", "text": "She leaving now."},
+      {"letter": "F", "text": "She has leaves."}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Present Perfect vs Past Simple",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 27,
+    "question": "Choose correct conditionals.",
+    "parsed_options": [
+      {"letter": "A", "text": "If it rains, we will stay home."},
+      {"letter": "B", "text": "If it will rain, we stay home."},
+      {"letter": "C", "text": "If I had money, I would travel."},
+      {"letter": "D", "text": "If I have money, I would travel."},
+      {"letter": "E", "text": "If she studies, she will pass."},
+      {"letter": "F", "text": "If she studied, she will pass."}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Conditionals",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 28,
+    "question": "Choose correct passive forms.",
+    "parsed_options": [
+      {"letter": "A", "text": "The bridge was built in 1990."},
+      {"letter": "B", "text": "The bridge built in 1990."},
+      {"letter": "C", "text": "The emails are sent daily."},
+      {"letter": "D", "text": "The emails send daily."},
+      {"letter": "E", "text": "The car repaired yesterday."},
+      {"letter": "F", "text": "The car is repairing yesterday."}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Passive voice",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 29,
+    "question": "Choose correct comparative forms.",
+    "parsed_options": [
+      {"letter": "A", "text": "better"},
+      {"letter": "B", "text": "more tall"},
+      {"letter": "C", "text": "worse"},
+      {"letter": "D", "text": "more bad"},
+      {"letter": "E", "text": "farther"},
+      {"letter": "F", "text": "badder"}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Comparative adjectives",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 30,
+    "question": "Choose correct prepositional phrases.",
+    "parsed_options": [
+      {"letter": "A", "text": "good at"},
+      {"letter": "B", "text": "interested in"},
+      {"letter": "C", "text": "depend of"},
+      {"letter": "D", "text": "married with"},
+      {"letter": "E", "text": "listen to"},
+      {"letter": "F", "text": "afraid from"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Prepositions",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 31,
+    "question": "Choose correct modal meanings (obligation/necessity).",
+    "parsed_options": [
+      {"letter": "A", "text": "must"},
+      {"letter": "B", "text": "have to"},
+      {"letter": "C", "text": "might"},
+      {"letter": "D", "text": "could"},
+      {"letter": "E", "text": "should"},
+      {"letter": "F", "text": "may"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Modal verbs",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 32,
+    "question": "Choose correct reported speech.",
+    "parsed_options": [
+      {"letter": "A", "text": "He said he was busy."},
+      {"letter": "B", "text": "He said he is busy."},
+      {"letter": "C", "text": "She said she had finished."},
+      {"letter": "D", "text": "She said she has finished."},
+      {"letter": "E", "text": "He told that he was late."},
+      {"letter": "F", "text": "He said he were tired."}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Reported speech",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 33,
+    "question": "Choose correct uncountable nouns.",
+    "parsed_options": [
+      {"letter": "A", "text": "advice"},
+      {"letter": "B", "text": "information"},
+      {"letter": "C", "text": "suggestion"},
+      {"letter": "D", "text": "idea"},
+      {"letter": "E", "text": "furniture"},
+      {"letter": "F", "text": "apple"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Countable and uncountable nouns",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 34,
+    "question": "Choose correct articles.",
+    "parsed_options": [
+      {"letter": "A", "text": "an hour"},
+      {"letter": "B", "text": "a university"},
+      {"letter": "C", "text": "an European"},
+      {"letter": "D", "text": "a umbrella"},
+      {"letter": "E", "text": "a honest man"},
+      {"letter": "F", "text": "an apple"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Articles",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 35,
+    "question": "Choose correct future forms.",
+    "parsed_options": [
+      {"letter": "A", "text": "I will call you later."},
+      {"letter": "B", "text": "I am going to start tomorrow."},
+      {"letter": "C", "text": "I go to start tomorrow."},
+      {"letter": "D", "text": "I will going tomorrow."},
+      {"letter": "E", "text": "She will goes."},
+      {"letter": "F", "text": "They are going travel."}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Future tenses",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 36,
+    "question": "Choose correct synonyms of \"important\".",
+    "parsed_options": [
+      {"letter": "A", "text": "essential"},
+      {"letter": "B", "text": "crucial"},
+      {"letter": "C", "text": "minor"},
+      {"letter": "D", "text": "useless"},
+      {"letter": "E", "text": "significant"},
+      {"letter": "F", "text": "optional"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Vocabulary. Synonyms.",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 37,
+    "question": "Choose correct opposites of \"increase\".",
+    "parsed_options": [
+      {"letter": "A", "text": "decrease"},
+      {"letter": "B", "text": "reduce"},
+      {"letter": "C", "text": "grow"},
+      {"letter": "D", "text": "expand"},
+      {"letter": "E", "text": "decline"},
+      {"letter": "F", "text": "rise"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Vocabulary. Antonyms.",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 38,
+    "question": "Choose correct collocations.",
+    "parsed_options": [
+      {"letter": "A", "text": "heavy rain"},
+      {"letter": "B", "text": "strong coffee"},
+      {"letter": "C", "text": "big rain"},
+      {"letter": "D", "text": "powerful tea"},
+      {"letter": "E", "text": "make money"},
+      {"letter": "F", "text": "do money"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Vocabulary. Collocations.",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 39,
+    "question": "Choose correct irregular verbs (Past – V3).",
+    "parsed_options": [
+      {"letter": "A", "text": "go – went – gone"},
+      {"letter": "B", "text": "see – saw – seen"},
+      {"letter": "C", "text": "take – taked – taken"},
+      {"letter": "D", "text": "eat – ate – eaten"},
+      {"letter": "E", "text": "come – came – come"},
+      {"letter": "F", "text": "give – gived – given"}
+    ],
+    "correct_letters": ["A", "B"],
+    "points": "2",
+    "topic": "Irregular verbs",
+    "type": "multi",
+    "has_formula_images": false,
+    "context": ""
+  },
+  {
+    "num": 40,
+    "question": "Choose correct uses of Present Perfect.",
+    "parsed_options": [
+      {"letter": "A", "text": "I have finished my homework."},
+      {"letter": "B", "text": "I finished my homework yesterday."},
+      {"letter": "C", "text": "She has lived here since 2020."},
+      {"letter": "D", "text": "She lived here since 2020."},
+      {"letter": "E", "text": "They have went home."},
+      {"letter": "F", "text": "He has already left."}
+    ],
+    "correct_letters": ["A", "C"],
+    "points": "2",
+    "topic": "Present Perfect",
+    "type": "multi",
     "has_formula_images": false,
     "context": ""
   }
