@@ -1,0 +1,53 @@
+async function sendResultsToTelegram() {
+  try {
+    const name = window.userInfo?.name || 'Ученик';
+    const phone = window.userInfo?.phone || 'Не указан';
+
+    const resultsElement = document.getElementById('resultsContent');
+    
+    // 1. Создаем скриншот с ПОВЫШЕННЫМ качеством
+    const canvas = await html2canvas(resultsElement, {
+      backgroundColor: '#0f1117',
+      scale: 3, // Увеличили с 2 до 3 для идеальной четкости
+      useCORS: true,
+      logging: false,
+      // Убираем явное указание ширины/высоты окна, чтобы html2canvas сам вычислил размер контента
+      scrollX: 0,
+      scrollY: -window.scrollY,
+    });
+
+    // 2. Превращаем в Blob
+    const imageBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+
+    const botToken = '8791571555:AAFi3cOD9J_WT-573lzDNyrGxQDMQwFBQjE'; 
+    const chatId = -1003606584661; // ID вашей TG-группы (убедитесь, что бот добавлен в группу и имеет права на отправку сообщений)
+
+    const formData = new FormData();
+    formData.append('chat_id', chatId);
+    
+    // МЕНЯЕМ поле на 'document'
+    formData.append('document', imageBlob, `Результат_${name}.png`);
+    
+    // Текст подписи
+    const caption = `📊 *Результаты ЕНТ*\n👤 Ученик: ${name}\n📞 Телефон: ${phone}\n⏳ Время: ${globalTimeStr || '00:00'}\n🏆 Баллы: ${globalTotalEarned}/${globalTotalMax}`;
+    formData.append('caption', caption);
+    formData.append('parse_mode', 'Markdown');
+
+    // МЕНЯЕМ метод на sendDocument
+    const url = `https://api.telegram.org/bot${botToken}/sendDocument`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      console.log('✅ Результат отправлен как документ (без потери качества)');
+    } else {
+      const errorText = await response.text();
+      console.error('❌ Ошибка TG:', response.status, errorText);
+    }
+  } catch (e) {
+    console.error('❌ Ошибка при создании документа:', e);
+  }
+}
