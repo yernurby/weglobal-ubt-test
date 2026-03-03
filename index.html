@@ -146,6 +146,7 @@
   .badge-history { background: rgba(240,79,90,0.18); color: #ff8b93; }
   .badge-matgram { background: rgba(124,92,252,0.18); color: #b49dff; }
   .badge-eng { background: rgba(255,140,90,0.18); color: #ffab73; }
+  .badge-reading { background: rgba(230,126,34,0.18); color: #f0a55a; }
   
   .btn-start {
     display: inline-flex;
@@ -794,7 +795,7 @@ let QUESTIONS = {};
 // Функция загрузки всех JSON-файлов один раз при запуске
 async function loadQuestions() {
   try {
-    const subjects = ['math', 'physics', 'geo', 'history', 'matgram', 'eng'];
+    const subjects = ['math', 'physics', 'geo', 'history', 'matgram', 'eng', 'reading'];
     
     for (const subj of subjects) {
       const response = await fetch(`data/${subj}.json`);
@@ -819,19 +820,19 @@ const VARIANTS = [
     id: 'math_physics',
     label: 'Математика — Физика',
     elective: ['math', 'physics'],
-    required: ['history', 'matgram']
+    required: ['history', 'matgram', 'reading']
   },
   {
     id: 'math_geo',
     label: 'Математика — География',
     elective: ['math', 'geo'],
-    required: ['history', 'matgram']
+    required: ['history', 'matgram', 'reading']
   },
   {
     id: 'geo_eng',
     label: 'География — Английский',
     elective: ['geo', 'eng'],          // eng — новый предмет
-    required: ['history', 'matgram']
+    required: ['history', 'matgram', 'reading']
   }
 ];
 
@@ -841,7 +842,8 @@ const SUBJECT_INFO = {
   geo: { name: 'География', color: '#22d3a5', badgeClass: 'badge-geo', totalQ: 40 },
   history: { name: 'История Казахстана', color: '#f04f5a', badgeClass: 'badge-history', totalQ: 20 },
   matgram: { name: 'Матем. грамотность', color: '#7c5cfc', badgeClass: 'badge-matgram', totalQ: 10 }, 
-  eng: { name: 'Английский язык', color: '#ff9500', badgeClass: 'badge-eng', totalQ: 40 }
+  eng: { name: 'Английский язык', color: '#ff9500', badgeClass: 'badge-eng', totalQ: 40 },
+  reading: { name: 'Грамотность чтения', color: '#e67e22', badgeClass: 'badge-reading', totalQ: 10 }
 };
 
 // ==================== STATE ====================
