@@ -785,6 +785,7 @@
   </div>
 </div>
 
+
 <script>
 // ==================== DATA ====================
 // Глобальная переменная для вопросов (будет заполнена после загрузки)
@@ -1896,6 +1897,7 @@ async function sendAnswersToTelegram() {
               ${q.context}
             </div>` : ''}
             <div style="font-size:14px;font-weight:500;color:#e8eaf0;margin-bottom:14px;line-height:1.6;white-space:pre-line;">${q.question}</div>
+            ${q.image ? `<div style="margin:12px 0;text-align:center;"><img src="${q.image}" alt="Схема к вопросу" style="max-width:80%;height:auto;border-radius:8px;"></div>` : ''}
             ${optionsHtml ? `<div style="margin-bottom:12px;">${optionsHtml}</div>` : ''}
             <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:12px;padding-top:10px;border-top:1px solid #2a3045;">
               <div><span style="color:#8b91a8;">Ответ ученика: </span><strong style="color:${statusColor}">${userAnswerText}</strong></div>
@@ -1909,9 +1911,9 @@ async function sendAnswersToTelegram() {
 
     const totalPct = globalTotalMax > 0 ? Math.round(globalTotalEarned / globalTotalMax * 100) : 0;
 
-    // Встраиваем картинки как base64
-    const imgRegex = /src="([^"]+\.(png|jpg|jpeg|gif|svg))"/g;
-    const srcList = [...new Set([...questionsHtml.matchAll(imgRegex)].map(m => m[1]))];
+    // Встраиваем картинки как base64 (матчим и одинарные, и двойные кавычки)
+    const imgRegex = /src=(['"])([^'"]+\.(png|jpg|jpeg|gif|svg))\1/g;
+    const srcList = [...new Set([...questionsHtml.matchAll(imgRegex)].map(m => m[2]))];
     
     console.log('🖼 Найдено картинок:', srcList.length, srcList);
     
@@ -1919,6 +1921,7 @@ async function sendAnswersToTelegram() {
       const base64 = await imageToBase64(src);
       if (base64) {
         questionsHtml = questionsHtml.split(`src="${src}"`).join(`src="${base64}"`);
+        questionsHtml = questionsHtml.split(`src='${src}'`).join(`src="${base64}"`);
         console.log('✅ Встроена:', src);
       } else {
         console.warn('⚠️ Не загрузилась:', src);
